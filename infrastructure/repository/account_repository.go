@@ -2,7 +2,8 @@ package repository
 
 import (
 	"errors"
-	"github.com/tkhrk1010/bank_account/domain/model"
+
+	"github.com/tkhrk1010/go_bank_account/domain/model"
 )
 
 // implementation of the AccountRepository interface
@@ -12,7 +13,7 @@ type InMemoryAccountRepository struct {
 
 func NewInMemoryAccountRepository() *InMemoryAccountRepository {
 	return &InMemoryAccountRepository{
-			accounts: make(map[int]*model.Account),
+		accounts: make(map[int]*model.Account),
 	}
 }
 
@@ -42,7 +43,6 @@ func (r *InMemoryAccountRepository) Update(a *model.Account) error {
 	return ErrAccountNotFound
 }
 
-
 func (r *InMemoryAccountRepository) Delete(a *model.Account) error {
 	for _, account := range r.accounts {
 		if account.Id == a.Id {
@@ -52,6 +52,5 @@ func (r *InMemoryAccountRepository) Delete(a *model.Account) error {
 	}
 	return ErrAccountNotFound
 }
-
 
 var ErrAccountNotFound = errors.New("account not found")

@@ -2,8 +2,9 @@ package usecase
 
 import (
 	"errors"
-	"github.com/tkhrk1010/bank_account/domain/model"
-	"github.com/tkhrk1010/bank_account/domain/repository"
+
+	"github.com/tkhrk1010/go_bank_account/domain/model"
+	"github.com/tkhrk1010/go_bank_account/domain/repository"
 )
 
 var ErrInsufficientFunds = errors.New("insufficient funds")
@@ -49,17 +50,17 @@ func (a *accountUsecase) CheckBalance(accountId int) (int, error) {
 func (a *accountUsecase) Deposit(accountId int, amount int) (*model.Account, error) {
 	account, err := a.repo.FindById(accountId)
 	if err != nil {
-			return nil, err
+		return nil, err
 	}
 
 	if amount <= 0 {
-			return nil, errors.New("invalid deposit amount")
+		return nil, errors.New("invalid deposit amount")
 	}
 
 	account.Balance += amount
 	err = a.repo.Update(account)
 	if err != nil {
-			return nil, err
+		return nil, err
 	}
 
 	return account, nil
@@ -89,7 +90,6 @@ func (a *accountUsecase) Withdraw(accountId int, amount int) (*model.Account, er
 	return account, nil
 }
 
-
 func (a *accountUsecase) CloseAccount(accountId int) error {
 	// Accountを検索します
 	account, err := a.repo.FindById(accountId)
@@ -105,4 +105,3 @@ func (a *accountUsecase) CloseAccount(accountId int) error {
 
 	return nil
 }
-

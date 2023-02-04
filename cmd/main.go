@@ -3,8 +3,9 @@ package main
 import (
 	"fmt"
 	"log"
-	"github.com/tkhrk1010/bank_account/infrastructure/repository"
-	"github.com/tkhrk1010/bank_account/usecase"
+
+	"github.com/tkhrk1010/go_bank_account/infrastructure/repository"
+	"github.com/tkhrk1010/go_bank_account/usecase"
 )
 
 func main() {
@@ -22,7 +23,7 @@ func main() {
 		log.Fatal(err)
 	}
 	fmt.Printf("Opened account with Id %d and balance %d\n", account2.Id, account2.Balance)
-	
+
 	account, err = usecase.Deposit(account.Id, 500)
 	if err != nil {
 		log.Fatal(err)
