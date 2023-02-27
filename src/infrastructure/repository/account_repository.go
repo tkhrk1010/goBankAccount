@@ -3,7 +3,7 @@ package repository
 import (
 	"errors"
 
-	"github.com/tkhrk1010/go_bank_account/domain/model"
+	"github.com/tkhrk1010/go_bank_account/src/domain/model"
 )
 
 // implementation of the AccountRepository interface

@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/tkhrk1010/go_bank_account/infrastructure/repository"
-	"github.com/tkhrk1010/go_bank_account/usecase"
+	"github.com/tkhrk1010/go_bank_account/src/infrastructure/repository"
+	"github.com/tkhrk1010/go_bank_account/src/usecase"
 )
 
 func main() {

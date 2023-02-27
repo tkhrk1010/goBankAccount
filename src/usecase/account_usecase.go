@@ -3,8 +3,8 @@ package usecase
 import (
 	"errors"
 
-	"github.com/tkhrk1010/go_bank_account/domain/model"
-	"github.com/tkhrk1010/go_bank_account/domain/repository"
+	"github.com/tkhrk1010/go_bank_account/src/domain/model"
+	"github.com/tkhrk1010/go_bank_account/src/domain/repository"
 )
 
 var ErrInsufficientFunds = errors.New("insufficient funds")
